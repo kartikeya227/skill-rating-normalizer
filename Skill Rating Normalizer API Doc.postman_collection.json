@@ -1,0 +1,859 @@
+{
+	"info": {
+		"_postman_id": "f360fc67-5135-416a-b834-37b97082fd7c",
+		"name": "Skill Rating Normalizer API Doc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25469900"
+	},
+	"item": [
+		{
+			"name": "Create Domain",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"domainName\": \"Software Development\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/rating-normalizer/domain/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"rating-normalizer",
+						"domain",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Domain created successfully",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"domainName\": \"Marketing\",\n    \"description\": \"This domain is related to marketing activities\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rating-normalizer/domain/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rating-normalizer",
+								"domain",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 Apr 2024 00:28:41 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"domainId\": 1,\n        \"domainName\": \"Marketing\",\n        \"skills\": null\n    },\n    \"message\": \"Domain created successfully.\",\n    \"status\": 201\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Skill",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"skillName\": \"Selenium\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/rating-normalizer/skill/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"rating-normalizer",
+						"skill",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Skill created successfully",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"skillName\": \"Java\",\n    \"description\": \"This skill is related to Java programming language\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rating-normalizer/skill/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rating-normalizer",
+								"skill",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 Apr 2024 00:31:35 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"skillId\": 2,\n        \"skillName\": \"Java\",\n        \"subSkills\": null\n    },\n    \"message\": \"Skill created successfully.\",\n    \"status\": 201\n}"
+				}
+			]
+		},
+		{
+			"name": "Link Skill to Skill",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/rating-normalizer/skill/link-to-skill?parentSkillId=10&childSkillId=30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"rating-normalizer",
+						"skill",
+						"link-to-skill"
+					],
+					"query": [
+						{
+							"key": "parentSkillId",
+							"value": "10",
+							"description": "10,9"
+						},
+						{
+							"key": "childSkillId",
+							"value": "30"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Skill linked successfully",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rating-normalizer/skill/link-to-skill?parentSkillId=10&childSkillId=30",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rating-normalizer",
+								"skill",
+								"link-to-skill"
+							],
+							"query": [
+								{
+									"key": "parentSkillId",
+									"value": "10",
+									"description": "10,9"
+								},
+								{
+									"key": "childSkillId",
+									"value": "30"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 Apr 2024 14:56:23 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 10,\n        \"skillName\": \"Backend - Development\",\n        \"subSkills\": [\n            {\n                \"id\": 15,\n                \"skillName\": \"Java\",\n                \"subSkills\": []\n            },\n            {\n                \"id\": 18,\n                \"skillName\": \"GO\",\n                \"subSkills\": []\n            },\n            {\n                \"id\": 24,\n                \"skillName\": \"Micorservices\",\n                \"subSkills\": []\n            },\n            {\n                \"id\": 25,\n                \"skillName\": \"Kafka\",\n                \"subSkills\": []\n            },\n            {\n                \"id\": 26,\n                \"skillName\": \"RabittMQ\",\n                \"subSkills\": []\n            },\n            {\n                \"id\": 28,\n                \"skillName\": \"Elastic Search\",\n                \"subSkills\": []\n            },\n            {\n                \"id\": 29,\n                \"skillName\": \"Neo4J\",\n                \"subSkills\": []\n            },\n            {\n                \"id\": 31,\n                \"skillName\": \"Cloud\",\n                \"subSkills\": [\n                    {\n                        \"id\": 32,\n                        \"skillName\": \"AWS\",\n                        \"subSkills\": []\n                    },\n                    {\n                        \"id\": 33,\n                        \"skillName\": \"Azure\",\n                        \"subSkills\": []\n                    },\n                    {\n                        \"id\": 34,\n                        \"skillName\": \"GCP\",\n                        \"subSkills\": []\n                    }\n                ]\n            },\n            {\n                \"id\": 35,\n                \"skillName\": \"C/C++\",\n                \"subSkills\": []\n            },\n            {\n                \"id\": 30,\n                \"skillName\": \"Resiliance4J\",\n                \"subSkills\": []\n            }\n        ]\n    },\n    \"message\": \"Skill linked successfully.\",\n    \"status\": 200\n}"
+				},
+				{
+					"name": "Child skill is already a sub-skill of the parent skill",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rating-normalizer/skill/link-to-skill?parentSkillId=10&childSkillId=30",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rating-normalizer",
+								"skill",
+								"link-to-skill"
+							],
+							"query": [
+								{
+									"key": "parentSkillId",
+									"value": "10",
+									"description": "10,9"
+								},
+								{
+									"key": "childSkillId",
+									"value": "30"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 Apr 2024 15:09:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"message\": \"Child skill is already a sub-skill of the parent skill.\",\n    \"status\": 400\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Skill to domain",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/rating-normalizer/domain/add-skill?skillId=36&domainId=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"rating-normalizer",
+						"domain",
+						"add-skill"
+					],
+					"query": [
+						{
+							"key": "skillId",
+							"value": "36",
+							"description": "9,8,7"
+						},
+						{
+							"key": "domainId",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Skill added to domain successfully",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rating-normalizer/domain/add-skill?skillId=2&domainId=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rating-normalizer",
+								"domain",
+								"add-skill"
+							],
+							"query": [
+								{
+									"key": "skillId",
+									"value": "2"
+								},
+								{
+									"key": "domainId",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 Apr 2024 00:36:17 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"domainId\": 0,\n        \"domainName\": \"Software Development\",\n        \"skills\": [\n            {\n                \"skillId\": 2,\n                \"skillName\": \"Java\",\n                \"subSkills\": []\n            }\n        ]\n    },\n    \"message\": \"Skill added to domain successfully.\",\n    \"status\": 200\n}"
+				},
+				{
+					"name": "Domain not found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rating-normalizer/domain/add-skill?skillId=12&domainId=44",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rating-normalizer",
+								"domain",
+								"add-skill"
+							],
+							"query": [
+								{
+									"key": "skillId",
+									"value": "12",
+									"description": "9,8,7"
+								},
+								{
+									"key": "domainId",
+									"value": "44"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 Apr 2024 13:59:22 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"message\": \"Domain not found.\",\n    \"status\": 404\n}"
+				},
+				{
+					"name": "Skill already added to domain.",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rating-normalizer/domain/add-skill?skillId=12&domainId=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rating-normalizer",
+								"domain",
+								"add-skill"
+							],
+							"query": [
+								{
+									"key": "skillId",
+									"value": "12",
+									"description": "9,8,7"
+								},
+								{
+									"key": "domainId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 Apr 2024 13:59:56 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"message\": \"Skill already added to domain.\",\n    \"status\": 409\n}"
+				}
+			]
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testuser\",\r\n    \"email\": \"testuser@example.com\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/rating-normalizer/user/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"rating-normalizer",
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User created successfully",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Kevin\",\r\n    \"yearsOfExperience\": 6,\r\n    \"currentCompanyName\": \"PQR Corp\",\r\n    \"domainId\": 4\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rating-normalizer/user/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rating-normalizer",
+								"user",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 Apr 2024 15:17:46 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": \"147ba41f-24d8-4280-a7a8-742982fb14b1\",\n        \"name\": \"Kevin\",\n        \"yearsOfExperience\": 6,\n        \"currentCompanyName\": \"PQR Corp\",\n        \"skills\": null,\n        \"receivedReviews\": null,\n        \"domain\": {\n            \"id\": 4,\n            \"domainName\": \"Software Development\",\n            \"skills\": [\n                {\n                    \"id\": 6,\n                    \"skillName\": \"Automation Testing\",\n                    \"subSkills\": [\n                        {\n                            \"id\": 36,\n                            \"skillName\": \"Selenium\",\n                            \"subSkills\": []\n                        }\n                    ]\n                },\n                {\n                    \"id\": 7,\n                    \"skillName\": \"Blockchain - Development\",\n                    \"subSkills\": []\n                },\n                {\n                    \"id\": 8,\n                    \"skillName\": \"FullStack - Development\",\n                    \"subSkills\": [\n                        {\n                            \"id\": 15,\n                            \"skillName\": \"Java\",\n                            \"subSkills\": []\n                        },\n                        {\n                            \"id\": 18,\n                            \"skillName\": \"GO\",\n                            \"subSkills\": []\n                        },\n                        {\n                            \"id\": 20,\n                            \"skillName\": \"Typescript\",\n                            \"subSkills\": []\n                        },\n                        {\n                            \"id\": 22,\n                            \"skillName\": \"HTML\",\n                            \"subSkills\": []\n                        },\n                        {\n                            \"id\": 24,\n                            \"skillName\": \"Micorservices\",\n                            \"subSkills\": []\n                        },\n                        {\n                            \"id\": 26,\n                            \"skillName\": \"RabittMQ\",\n                            \"subSkills\": []\n                        },\n                        {\n                            \"id\": 27,\n                            \"skillName\": \"Swagger\",\n                            \"subSkills\": []\n                        }\n                    ]\n                },\n                {\n                    \"id\": 9,\n                    \"skillName\": \"Frontend - Development\",\n                    \"subSkills\": [\n                        {\n                            \"id\": 19,\n                            \"skillName\": \"Javascript\",\n                            \"subSkills\": []\n                        },\n                        {\n                            \"id\": 20,\n                            \"skillName\": \"Typescript\",\n                            \"subSkills\": []\n                        },\n                        {\n                            \"id\": 22,\n                            \"skillName\": \"HTML\",\n                            \"subSkills\": []\n                        },\n                        {\n                            \"id\": 23,\n                            \"skillName\": \"CSS\",\n                            \"subSkills\": []\n                        }\n                    ]\n                },\n                {\n                    \"id\": 10,\n                    \"skillName\": \"Backend - Development\",\n                    \"subSkills\": [\n                        {\n                            \"id\": 15,\n                            \"skillName\": \"Java\",\n                            \"subSkills\": []\n                        },\n                        {\n                            \"id\": 18,\n                            \"skillName\": \"GO\",\n                            \"subSkills\": []\n                        },\n                        {\n                            \"id\": 24,\n                            \"skillName\": \"Micorservices\",\n                            \"subSkills\": []\n                        },\n                        {\n                            \"id\": 25,\n                            \"skillName\": \"Kafka\",\n                            \"subSkills\": []\n                        },\n                        {\n                            \"id\": 26,\n                            \"skillName\": \"RabittMQ\",\n                            \"subSkills\": []\n                        },\n                        {\n                            \"id\": 28,\n                            \"skillName\": \"Elastic Search\",\n                            \"subSkills\": []\n                        },\n                        {\n                            \"id\": 29,\n                            \"skillName\": \"Neo4J\",\n                            \"subSkills\": []\n                        },\n                        {\n                            \"id\": 30,\n                            \"skillName\": \"Resiliance4J\",\n                            \"subSkills\": []\n                        },\n                        {\n                            \"id\": 31,\n                            \"skillName\": \"Cloud\",\n                            \"subSkills\": [\n                                {\n                                    \"id\": 32,\n                                    \"skillName\": \"AWS\",\n                                    \"subSkills\": []\n                                },\n                                {\n                                    \"id\": 33,\n                                    \"skillName\": \"Azure\",\n                                    \"subSkills\": []\n                                },\n                                {\n                                    \"id\": 34,\n                                    \"skillName\": \"GCP\",\n                                    \"subSkills\": []\n                                }\n                            ]\n                        },\n                        {\n                            \"id\": 35,\n                            \"skillName\": \"C/C++\",\n                            \"subSkills\": []\n                        }\n                    ]\n                },\n                {\n                    \"id\": 12,\n                    \"skillName\": \"Teamwork\",\n                    \"subSkills\": []\n                },\n                {\n                    \"id\": 13,\n                    \"skillName\": \"Communication\",\n                    \"subSkills\": []\n                },\n                {\n                    \"id\": 14,\n                    \"skillName\": \"Problem Solving\",\n                    \"subSkills\": []\n                }\n            ]\n        }\n    },\n    \"message\": \"User created successfully.\",\n    \"status\": 201\n}"
+				}
+			]
+		},
+		{
+			"name": "Give Review",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testuser\",\r\n    \"email\": \"testuser@example.com\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/rating-normalizer/user/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"rating-normalizer",
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reviewerUserId\": \"adc9071e-fe2b-4457-b188-d218ca7ba05a\",\r\n    \"revieweeUserId\": \"668ad991-fa2b-44cd-8f48-aaaac564c4f3\",\r\n    \"rating\": 4,\r\n    \"comment\": \"Great work on the project!\",\r\n    \"skillId\": 12,\r\n    \"yearsWorkedTogether\": 4\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rating-normalizer/user/give-review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rating-normalizer",
+								"user",
+								"give-review"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 Apr 2024 17:46:05 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 39,\n        \"originalRating\": 4,\n        \"normalizedRating\": 0,\n        \"comment\": \"Great work on the project!\",\n        \"yearsWorkedTogether\": 4,\n        \"reviewer\": {\n            \"id\": \"adc9071e-fe2b-4457-b188-d218ca7ba05a\",\n            \"name\": \"Devin\",\n            \"yearsOfExperience\": 10,\n            \"currentCompanyName\": \"PQR Corp\",\n            \"skills\": [],\n            \"receivedReviews\": [],\n            \"domain\": {\n                \"id\": 4,\n                \"domainName\": \"Software Development\",\n                \"skills\": [\n                    {\n                        \"id\": 6,\n                        \"skillName\": \"Automation Testing\",\n                        \"subSkills\": [\n                            {\n                                \"id\": 36,\n                                \"skillName\": \"Selenium\",\n                                \"subSkills\": []\n                            }\n                        ]\n                    },\n                    {\n                        \"id\": 7,\n                        \"skillName\": \"Blockchain - Development\",\n                        \"subSkills\": []\n                    },\n                    {\n                        \"id\": 8,\n                        \"skillName\": \"FullStack - Development\",\n                        \"subSkills\": [\n                            {\n                                \"id\": 15,\n                                \"skillName\": \"Java\",\n                                \"subSkills\": []\n                            },\n                            {\n                                \"id\": 18,\n                                \"skillName\": \"GO\",\n                                \"subSkills\": []\n                            },\n                            {\n                                \"id\": 20,\n                                \"skillName\": \"Typescript\",\n                                \"subSkills\": []\n                            },\n                            {\n                                \"id\": 22,\n                                \"skillName\": \"HTML\",\n                                \"subSkills\": []\n                            },\n                            {\n                                \"id\": 24,\n                                \"skillName\": \"Micorservices\",\n                                \"subSkills\": []\n                            },\n                            {\n                                \"id\": 26,\n                                \"skillName\": \"RabittMQ\",\n                                \"subSkills\": []\n                            },\n                            {\n                                \"id\": 27,\n                                \"skillName\": \"Swagger\",\n                                \"subSkills\": []\n                            }\n                        ]\n                    },\n                    {\n                        \"id\": 9,\n                        \"skillName\": \"Frontend - Development\",\n                        \"subSkills\": [\n                            {\n                                \"id\": 19,\n                                \"skillName\": \"Javascript\",\n                                \"subSkills\": []\n                            },\n                            {\n                                \"id\": 20,\n                                \"skillName\": \"Typescript\",\n                                \"subSkills\": []\n                            },\n                            {\n                                \"id\": 22,\n                                \"skillName\": \"HTML\",\n                                \"subSkills\": []\n                            },\n                            {\n                                \"id\": 23,\n                                \"skillName\": \"CSS\",\n                                \"subSkills\": []\n                            }\n                        ]\n                    },\n                    {\n                        \"id\": 10,\n                        \"skillName\": \"Backend - Development\",\n                        \"subSkills\": [\n                            {\n                                \"id\": 15,\n                                \"skillName\": \"Java\",\n                                \"subSkills\": []\n                            },\n                            {\n                                \"id\": 18,\n                                \"skillName\": \"GO\",\n                                \"subSkills\": []\n                            },\n                            {\n                                \"id\": 24,\n                                \"skillName\": \"Micorservices\",\n                                \"subSkills\": []\n                            },\n                            {\n                                \"id\": 25,\n                                \"skillName\": \"Kafka\",\n                                \"subSkills\": []\n                            },\n                            {\n                                \"id\": 26,\n                                \"skillName\": \"RabittMQ\",\n                                \"subSkills\": []\n                            },\n                            {\n                                \"id\": 28,\n                                \"skillName\": \"Elastic Search\",\n                                \"subSkills\": []\n                            },\n                            {\n                                \"id\": 29,\n                                \"skillName\": \"Neo4J\",\n                                \"subSkills\": []\n                            },\n                            {\n                                \"id\": 30,\n                                \"skillName\": \"Resiliance4J\",\n                                \"subSkills\": []\n                            },\n                            {\n                                \"id\": 31,\n                                \"skillName\": \"Cloud\",\n                                \"subSkills\": [\n                                    {\n                                        \"id\": 32,\n                                        \"skillName\": \"AWS\",\n                                        \"subSkills\": []\n                                    },\n                                    {\n                                        \"id\": 33,\n                                        \"skillName\": \"Azure\",\n                                        \"subSkills\": []\n                                    },\n                                    {\n                                        \"id\": 34,\n                                        \"skillName\": \"GCP\",\n                                        \"subSkills\": []\n                                    }\n                                ]\n                            },\n                            {\n                                \"id\": 35,\n                                \"skillName\": \"C/C++\",\n                                \"subSkills\": []\n                            }\n                        ]\n                    },\n                    {\n                        \"id\": 12,\n                        \"skillName\": \"Teamwork\",\n                        \"subSkills\": []\n                    },\n                    {\n                        \"id\": 13,\n                        \"skillName\": \"Communication\",\n                        \"subSkills\": []\n                    },\n                    {\n                        \"id\": 14,\n                        \"skillName\": \"Problem Solving\",\n                        \"subSkills\": []\n                    }\n                ]\n            }\n        },\n        \"skill\": {\n            \"id\": 12,\n            \"skillName\": \"Teamwork\",\n            \"subSkills\": []\n        }\n    },\n    \"message\": \"Review created successfully.\",\n    \"status\": 201\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Skill Evaluation",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/rating-normalizer/user/get-skills/8d2512c2-36f1-49ba-afae-b8bb3890f4bb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"rating-normalizer",
+						"user",
+						"get-skills",
+						"8d2512c2-36f1-49ba-afae-b8bb3890f4bb"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rating-normalizer/user/get-skills/8d2512c2-36f1-49ba-afae-b8bb3890f4bb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rating-normalizer",
+								"user",
+								"get-skills",
+								"8d2512c2-36f1-49ba-afae-b8bb3890f4bb"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 Apr 2024 22:30:43 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"headers\": {},\n    \"body\": {\n        \"data\": [\n            {\n                \"skillName\": null,\n                \"originalRating\": \"High Relevance\",\n                \"normalizedRating\": \"Average Relevance\"\n            },\n            {\n                \"skillName\": null,\n                \"originalRating\": \"High Relevance\",\n                \"normalizedRating\": \"Below Average Relevance\"\n            }\n        ],\n        \"message\": \"User skills retrieved successfully.\",\n        \"status\": 200\n    },\n    \"statusCode\": \"OK\",\n    \"statusCodeValue\": 200\n}"
+				}
+			]
+		}
+	]
+}
