@@ -61,4 +61,4 @@ MATCH p=()-[:REVIEWED]->()-[:HAS_SKILL]->() RETURN p LIMIT 25;
 ```cypher
 MATCH p=()-[:REVIEWED]->()-[:HAS_SKILL]->()-[:SUB_SKILL|:HAS_SKILL]->() RETURN p LIMIT 25;
 ```
-Made with ❤️ and ![Java Logo](https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/1280px-Java_programming_language_logo.svg.png) by Kartikeya
+Made with ❤️ by Kartikeya
